@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import { HeroMain } from "./components/heroSection/HeroMain";
 import HamsterLoader from "./components/Loader/Loader";
 import Navbarmain from "./components/navbar/Navbarmain";
+import { AboutMeMain } from "./components/aboutmesection/AboutMeMain";
+import Helper from "./components/HelperSection/Helper";
+import SkillsMain from "./components/skillssection/SkillsMain";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -9,7 +12,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3655);
+    }, 3600);
     return () => clearTimeout(timer);
   }, []);
   return (
@@ -19,17 +22,14 @@ function App() {
           <HamsterLoader />
         </div>
       ) : (
-        // <div className="pt-3 w-screen mx-1">
-        //   <Navbarmain />
-        //   <HeroMain />
-        // </div>
-        <div className="fixed inset-0 flex items-center justify-center bg-black">
-  <div className="w-[98%] h-[95vh] m-2 p-2 border border-white box-border">
-    <Navbarmain />
-    <HeroMain />
-  </div>
-</div>
-
+        <div className="pt-3 w-screen mx-1">
+          <Navbarmain />
+          <HeroMain />
+          <AboutMeMain />
+          <SkillsMain />
+          <Helper />
+        </div>
+        
       )}
     </main>
   );
