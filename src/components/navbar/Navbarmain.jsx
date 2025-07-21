@@ -33,7 +33,7 @@ function Navbarmain() {
     return (
         <>
             <nav className="max-w-[1300px] mx-auto sm:px-1 px-4 w-full fixed left-[50%] -translate-x-[50%] z-20 flex gap-3 mt-2">
-                <div className="flex justify-between w-full max-w-[1200px] mx-auto bg-black items-center p-6 rounded-r-full sm:p-3 sm:rounded-full rounded-l-full border-[0.5px] border-orange">
+                <div className="flex justify-between w-full max-w-[1200px] mx-auto bg-black items-center p-6 rounded-r-full lg:pr-5 sm:p-3 sm:rounded-full rounded-l-full border-[0.5px] border-orange">
                     <Navbarlogo />
                     <div className={`lg:block ${menuOpen ? "block" : "hidden"}`}>
                         <Navbarlinks />

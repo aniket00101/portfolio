@@ -23,7 +23,7 @@ function App() {
         </div>
       ) : (
         <div>
-          <div className="pt-3 w-screen mx-1 dark:bg-red-600">
+          <div className="pt-3 w-full mx-1 dark:bg-red-600">
             <Navbarmain />
             <HeroMain />
             <AboutMeMain />

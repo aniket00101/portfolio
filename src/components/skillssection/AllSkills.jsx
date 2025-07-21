@@ -2,7 +2,7 @@ import React from 'react'
 import { FaHtml5, FaCss3, FaReact, FaGithub } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
 import { RiTailwindCssFill, RiFirebaseFill } from "react-icons/ri";
-import { SiRedux, SiFlask, SiExpress, SiMongodb, SiMysql, SiSocketdotio, SiRender } from "react-icons/si";
+import { SiRedux, SiFlask, SiExpress, SiMongodb, SiMysql, SiSocketdotio, SiRender, SiC, SiCplusplus } from "react-icons/si";
 import { FaNodeJs, FaJava, FaPython } from "react-icons/fa6";
 import { BiLogoDjango } from "react-icons/bi";
 import { IoLogoVercel } from "react-icons/io5";
@@ -64,10 +64,10 @@ const skills = [
         icon:FaGithub,
     },
     {
-        icon:IoLogoVercel,
+        icon:SiC,
     },
     {
-        icon:IoLogoVercel,
+        icon:SiCplusplus,
     },
     {
         icon:FaPython,
