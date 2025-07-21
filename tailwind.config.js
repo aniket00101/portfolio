@@ -1,9 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: 'class',
   theme: {
     screens: {
-      sm: "350px",
+      sm: "300px",
       md: "768px",
       lg: "1024px",
       xl: "1280px",
@@ -39,6 +40,7 @@ export default {
       grey: "#626965",
       lightGrey: "#978580",
       darkGrey: "#3f4441",
+      lightBeige: "#232124"
     },
     extend: {
       boxShadow: {

@@ -16,20 +16,21 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
   return (
-    <main className="font-body min-h-screen ">
+    <main className="font-body min-h-screen bg-DarkBrown dark:bg-lightBrown transition-colors duration-500">
       {loading ? (
         <div className="grid place-items-center min-h-screen w-screen bg-[#121621]">
           <HamsterLoader />
         </div>
       ) : (
-        <div className="pt-3 w-screen mx-1">
-          <Navbarmain />
-          <HeroMain />
-          <AboutMeMain />
-          <SkillsMain />
-          <Helper />
+        <div>
+          <div className="pt-3 w-screen mx-1 dark:bg-red-600">
+            <Navbarmain />
+            <HeroMain />
+            <AboutMeMain />
+            <SkillsMain />
+            <Helper />
+          </div>
         </div>
-        
       )}
     </main>
   );
