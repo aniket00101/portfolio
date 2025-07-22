@@ -1,10 +1,11 @@
 import Navbarlogo from "./Navbarlogo";
 import Navbarlinks from "./Navbarlinks";
-import NavbarBtn from "./NavbarBtn";
+
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { useState, useEffect } from "react";
 import Chatbot from "./chatbot"; // Import your chatbot component
-import { BsRobot, BsSun, BsMoon } from "react-icons/bs"; // Optional: chatbot icon
+import { BsRobot, BsSun, BsMoon } from "react-icons/bs";
+import { TbMessageChatbot } from "react-icons/tb"; // Optional: chatbot icon
 
 function Navbarmain() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -46,7 +47,7 @@ function Navbarmain() {
                 </div>
                 <div className="flex sm:block sm:p-2 bg-black items-center justify-center rounded-full border-[0.5px] border-orange lg:p-6">
                     <button className="text-2xl p-3 border border-orange rounded-full text-white"
-                    onClick={toggleChat}><BsRobot /></button>
+                    onClick={toggleChat}><TbMessageChatbot /></button>
                 {chatOpen && <Chatbot />}
                 </div>
                 <div className="flex sm:block sm:p-2 bg-black items-center justify-center rounded-full border-[0.5px] border-orange lg:p-6">

@@ -5,6 +5,7 @@ import Navbarmain from "./components/navbar/Navbarmain";
 import { AboutMeMain } from "./components/aboutmesection/AboutMeMain";
 import Helper from "./components/HelperSection/Helper";
 import SkillsMain from "./components/skillssection/SkillsMain";
+import ExperienceMain from "./components/experience/ExperienceMain";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -28,6 +29,7 @@ function App() {
             <HeroMain />
             <AboutMeMain />
             <SkillsMain />
+            <ExperienceMain />
             <Helper />
           </div>
         </div>
