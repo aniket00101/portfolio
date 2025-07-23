@@ -7,6 +7,7 @@ import Helper from "./components/HelperSection/Helper";
 import SkillsMain from "./components/skillssection/SkillsMain";
 import ExperienceMain from "./components/experience/ExperienceMain";
 import ProjectMain from "./components/projectsSection/ProjectMain";
+import ContactMeMain from "./components/contactSection/ContactMeMain";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -32,6 +33,7 @@ function App() {
             <SkillsMain />
             <ExperienceMain />
             <ProjectMain />
+            <ContactMeMain />
             <Helper />
           </div>
         </div>
