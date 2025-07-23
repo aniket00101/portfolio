@@ -27,6 +27,7 @@ export default {
       darkGrey: "#3f4441",
        */
       brown: "#53423e",
+      hex: "#1A2238",
       lightBrown: "#645550",
       darkBrown: "#2c2523",
       black: "#1e1917",

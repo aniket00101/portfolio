@@ -6,6 +6,7 @@ import { AboutMeMain } from "./components/aboutmesection/AboutMeMain";
 import Helper from "./components/HelperSection/Helper";
 import SkillsMain from "./components/skillssection/SkillsMain";
 import ExperienceMain from "./components/experience/ExperienceMain";
+import ProjectMain from "./components/projectsSection/ProjectMain";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -17,7 +18,7 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
   return (
-    <main className="font-body min-h-screen bg-DarkBrown dark:bg-lightBrown transition-colors duration-500">
+    <main className="font-body min-h-screen bg-DarkBrown dark:bg-hex transition-colors duration-500">
       {loading ? (
         <div className="grid place-items-center min-h-screen w-screen bg-[#121621]">
           <HamsterLoader />
@@ -30,6 +31,7 @@ function App() {
             <AboutMeMain />
             <SkillsMain />
             <ExperienceMain />
+            <ProjectMain />
             <Helper />
           </div>
         </div>
