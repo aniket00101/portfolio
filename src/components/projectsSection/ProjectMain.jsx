@@ -7,7 +7,6 @@ import { fadeIn } from '../framerMotion/variants'
 const projects = [
   {
     name: 'Green Hand Crop Recomadantion and Price Prediction Project',
-    year: '2025',
     align: 'right',
     image: '/images/project/greenHand.png',
     link: 'https://greenhand-pr391.onrender.com/',
@@ -15,12 +14,12 @@ const projects = [
   },
   {
     name: '3D Book Design Portfolio Website',
-    year: '2025',
     align: 'left',
     image: '/images/project/bookportfolio.png',
     link: 'https://portfolio-book-design.vercel.app/',
     sourcecode: 'https://github.com/aniket00101/Portfolio-Book-design-'
-  }
+  },
+  
 ]
 const ProjectMain = () => {
   return (
@@ -28,9 +27,9 @@ const ProjectMain = () => {
       <motion.div variants={fadeIn('up',0.2)} initial = "hidden" whileInView="show" viewport={{ once: false, amount: 0}}>
         <ProjectText />
       </motion.div>
-      <div className="flex flex-col gap-20 max-w-[900px] mx-auto mt-12">
+      <div className="flex flex-col gap-20 max-w-[900px] mx-auto mt-12 ">
         {projects.map((item, index) => {
-          return <SingleProject key={index} name={item.name} year={item.year} align={item.align} image={item.image} link={item.link} sourcecode={item.sourcecode} />
+          return <SingleProject key={index} name={item.name} align={item.align} image={item.image} link={item.link} sourcecode={item.sourcecode} />
         })}
 
       </div>
