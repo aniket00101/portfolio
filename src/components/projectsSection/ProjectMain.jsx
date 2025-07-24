@@ -6,7 +6,7 @@ import { fadeIn } from '../framerMotion/variants'
 
 const projects = [
   {
-    name: 'Green Hand Crop Recomadantion and price prediction project',
+    name: 'Green Hand Crop Recomadantion and Price Prediction Project',
     year: '2025',
     align: 'right',
     image: '/images/project/greenHand.png',
@@ -14,7 +14,7 @@ const projects = [
     sourcecode: 'https://github.com/aniket00101/GreenHand-PR391'
   },
   {
-    name: 'Book Design portfolio',
+    name: '3D Book Design Portfolio Website',
     year: '2025',
     align: 'left',
     image: '/images/project/bookportfolio.png',
