@@ -3,11 +3,11 @@ import { HeroMain } from "./components/heroSection/HeroMain";
 import HamsterLoader from "./components/Loader/Loader";
 import Navbarmain from "./components/navbar/Navbarmain";
 import { AboutMeMain } from "./components/aboutmesection/AboutMeMain";
-import Helper from "./components/HelperSection/Helper";
 import SkillsMain from "./components/skillssection/SkillsMain";
 import ExperienceMain from "./components/experience/ExperienceMain";
 import ProjectMain from "./components/projectsSection/ProjectMain";
 import ContactMeMain from "./components/contactSection/ContactMeMain";
+import FooterMain from "./components/footer/FooterMain";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -34,7 +34,7 @@ function App() {
             <ExperienceMain />
             <ProjectMain />
             <ContactMeMain />
-            <Helper />
+            <FooterMain />
           </div>
         </div>
       )}

@@ -7,6 +7,8 @@ import { FaNodeJs, FaJava, FaPython } from "react-icons/fa6";
 import { BiLogoDjango } from "react-icons/bi";
 import { IoLogoVercel } from "react-icons/io5";
 import { GrGraphQl } from "react-icons/gr";
+import { motion } from 'framer-motion'
+import { fadeIn } from '../framerMotion/variants'
 
 const skills = [
     {
@@ -75,8 +77,6 @@ const skills = [
     {
         icon:FaJava,
     },
-     
-
 ]
 
 function AllSkills() {
@@ -84,7 +84,10 @@ function AllSkills() {
     <div className="grid md:grid-cols-5 lg:grid-cols-7 sm:grid-cols-3 gap-9 my-12">
         {skills.map((item,index)=>{
             return<div key={index} className="flex flex-col items-center">
-                <item.icon className="text-7xl text-orange"/>
+                <motion.div variants={fadeIn('up',0.02 * index)} initial = "hidden" whileInView="show" viewport={{ once: false, amount: 0}}>
+                    <item.icon className="text-7xl text-orange"/>
+                </motion.div>
+                
             </div>
         })}
     </div>
