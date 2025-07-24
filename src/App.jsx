@@ -25,8 +25,8 @@ function App() {
           <HamsterLoader />
         </div>
       ) : (
-        <div>
-          <div className="pt-3 w-full dark:bg-red-600">
+        <div className="w-full max-w-[100vw] overflow-x-hidden">
+          <div className="pt-3 px-9 w-full dark:bg-red-600">
             <Navbarmain />
             <HeroMain />
             <AboutMeMain />
