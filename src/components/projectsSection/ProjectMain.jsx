@@ -6,7 +6,7 @@ import { fadeIn } from '../framerMotion/variants'
 
 const projects = [
   {
-    name: 'Green Hand Crop Recomadantion and Price Prediction Project',
+    name: 'Green Hand (Crop Recomadantion and Price Prediction Project)',
     align: 'right',
     image: '/images/project/greenHand.png',
     link: 'https://greenhand-pr391.onrender.com/',
@@ -18,8 +18,7 @@ const projects = [
     image: '/images/project/bookportfolio.png',
     link: 'https://portfolio-book-design.vercel.app/',
     sourcecode: 'https://github.com/aniket00101/Portfolio-Book-design-'
-  },
-  
+  }  
 ]
 const ProjectMain = () => {
   return (
