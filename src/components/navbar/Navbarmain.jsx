@@ -3,9 +3,9 @@ import Navbarlinks from "./Navbarlinks";
 
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { useState, useEffect } from "react";
-import Chatbot from "./chatbot"; // Import your chatbot component
-import { BsRobot, BsSun, BsMoon } from "react-icons/bs";
-import { TbMessageChatbot } from "react-icons/tb"; // Optional: chatbot icon
+import Chatbot from "./chatbot"; 
+import { BsSun, BsMoon } from "react-icons/bs";
+import { TbMessageChatbot } from "react-icons/tb"; 
 
 function Navbarmain() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -32,15 +32,15 @@ function Navbarmain() {
 
     return (
         <>
-            <nav className="max-w-[1300px] mx-auto px-4 w-full fixed left-[50%] -translate-x-[50%] z-20 flex gap-3 mt-2">
+            <nav className="max-w-[1300px] mx-auto sm:px-1 px-4 w-full fixed left-[50%] -translate-x-[50%] z-20 flex gap-3 mt-2">
                 <div className="flex justify-between w-full max-w-[1200px] mx-auto items-center p-6 rounded-r-full lg:pr-5 sm:p-3 sm:rounded-full rounded-l-full backdrop-blur-[9px] border-[2px] border-orange">
                     <Navbarlogo />
-                    <div className={`lg:block ${menuOpen ? "block" : "hidden"}`}>
+                    <div className={`lg:block ${menuOpen ? "block" : "hidden"} md:hidden`}>
                         <Navbarlinks />
                     </div>
                 </div>
-                <div className="flex lg:hidden sm:block p-6 sm:p-2 backdrop-blur-[9px] items-center justify-center rounded-full border-[2px] border-orange">
-                    <button className="text-2xl p-3 border-[2px] border-orange rounded-full text-white" onClick={toggleMenu}>
+                <div className="flex lg:hidden sm:block sm:p-2 backdrop-blur-[9px] items-center justify-center rounded-full border-[2px] border-orange">
+                    <button className="text-2xl p-3 border-[2px] border-orange rounded-full  text-white" onClick={toggleMenu}>
                         <GiHamburgerMenu />
                     </button>
                 </div>
@@ -53,6 +53,9 @@ function Navbarmain() {
                     <button className="text-2xl p-3 border-[2px] border-orange rounded-full text-white"
                     onClick={toggleTheme}>{darkTheme ? <BsSun /> : <BsMoon />}</button>
                 </div>
+                <div className={`lg:hidden ${menuOpen ? "block" : "hidden"}`}>
+                        <Navbarlinks />
+                    </div>
             </nav>
         </>
     );

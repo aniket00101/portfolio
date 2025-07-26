@@ -2,6 +2,7 @@ import { li } from 'framer-motion/client'
 import React from 'react'
 
 const links = [
+    { link: "Home", section: "home" },
     { link: "About Me", section: "about" },
     { link: "Skills", section: "skills" },
     { link: "Experience", section: "experience" },
@@ -17,7 +18,7 @@ const FooterMain = () => {
             <p className="text-3xl text-lightGrey">Aniket das</p>
             <ul className="flex gap-4 text-lightGrey text-xl">
                 {links.map((item,index)=>{
-                    return <li key={index}><a href="" className="hover:text-white transition-all duration-500 cursor-pointer">{item.link}</a></li>
+                    return <li key={index}><a href={`#${item.section}`} className="hover:text-white transition-all duration-500 cursor-pointer">{item.link}</a></li>
                 })}
             </ul>
         </div>

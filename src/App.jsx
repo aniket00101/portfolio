@@ -35,12 +35,11 @@ function App() {
             className="fixed top-0 left-0 w-screen h-screen object-cover z-0"
           >
             <source src="/video/background.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
           </video>
           <div className="fixed top-0 left-0 w-screen h-screen z-5 pointer-events-none">
             <HeroGradient />
           </div>
-          <div className="pt-3 px-9 w-full dark:bg-red-600 relative z-10">
+          <div className="pt-3 px-5 w-full dark:bg-red-600 relative z-10">
             <Navbarmain />
             <HeroMain />
             <AboutMeMain />
