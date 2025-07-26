@@ -12,7 +12,7 @@ const SkillsMain = () => {
         <motion.div variants={fadeIn('down', 0.2)} initial="hidden" whileInView="show" viewport={{ once: false, amount: 0 }}>
           <SkillsText />
         </motion.div>
-        <div className="border border-white px-5 mb-12 mt-12">
+        <div className="border border-white px-5 backdrop-blur-[4.5px] mb-12 mt-12">
           <div className="lg:block sm:hidden ">
             <AllSkills />
           </div>
