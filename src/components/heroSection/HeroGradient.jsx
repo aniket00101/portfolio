@@ -5,7 +5,7 @@ export const HeroGradient = () => {
     <div>
         <div className="shadow-cyanMediumShadow absolute top-0 right-[400px] animate-pulse"></div>
 
-        <div className="shadow-orangeMediumShadow absolute top-0 right-0 animate-pulse"></div>
+        <div className="shadow-orangeMediumShadow absolute top-[300px] right-0 animate-pulse"></div>
 
         <div className="shadow-cyanMediumShadow absolute top-[300px] left-0 opacity-80"></div>
 
