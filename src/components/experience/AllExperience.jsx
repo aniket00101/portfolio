@@ -7,7 +7,7 @@ import { fadeIn } from '../framerMotion/variants';
 const experiences = [
   {
     job: 'Front-End Developer',
-    date: '29th August 2024 - 17th May 2025',
+    date: '29th August 2024 - 17th February 2025',
     responsibility: [
       "Designing interactive web interfaces with React, Tailwind, and Redux.",
       "Turning ideas into elegant UIs using React and Tailwind.",
@@ -19,7 +19,7 @@ const experiences = [
   },
   {
     job: 'Back-End Developer',
-    date: '29th July 2024 - 30th November 2025',
+    date: '20th March 2024 - 30th August 2025',
     responsibility: [
       "Developing scalable backend APIs using Node.js, Express, and MongoDB.",
       "Building RESTful services and integrations with Django and Flask.",
