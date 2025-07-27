@@ -16,7 +16,7 @@ function Chatbot() {
   };
 
   return (
-    <div className="fixed inset-0 bg-black/30 flex items-center justify-center z-40 mt-[50vh]">
+    <div className="fixed inset-0  w-[400px] bg-black/30 flex items-center justify-center z-40 mt-[50vh]">
       <div className="w-[90%] max-w-md bg-white border border-gray-300 rounded-lg shadow-lg flex flex-col">
         
         {/* Header */}
