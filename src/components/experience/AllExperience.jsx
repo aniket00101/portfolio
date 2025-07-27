@@ -19,7 +19,7 @@ const experiences = [
   },
   {
     job: 'Back-End Developer',
-    date: '20th March 2024 - 30th August 2025',
+    date: '20th March 2025 - 30th August 2025',
     responsibility: [
       "Developing scalable backend APIs using Node.js, Express, and MongoDB.",
       "Building RESTful services and integrations with Django and Flask.",

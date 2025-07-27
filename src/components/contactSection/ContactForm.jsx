@@ -13,7 +13,7 @@ const ContactForm = () => {
   const handleMessages = (e) => setMessages(e.target.value);
 
   const form = useRef();
-
+  
   const sendDataToFirebase = async (e) => {
     e.preventDefault();
 
