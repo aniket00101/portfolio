@@ -36,8 +36,9 @@ const ContactForm = () => {
 
   return (
     <div>
-      <p className="text-cyan">{success}</p>
+      
       <form className="flex flex-col gap-4 text-white mt-6" ref={form} onSubmit={sendDataToFirebase}>
+
         <input
           type="text" name="from_name" placeholder="Your Name" required className="h-12 bg-black/25 px-2 border-b-2 rounded-lg border-b-orange focus:outline-none focus:border-orange border-l-2 border-l-orange" value={name}
           onChange={handleName} />
@@ -46,7 +47,10 @@ const ContactForm = () => {
 
         <textarea name="messages" placeholder="Message" rows="9" cols="50" required className="rounded-lg bg-black/25 border-b-2 p-2 border-orange bg-transparent border-l-2 border-l-orange focus:outline-none backdrop-blur-[10px]" value={messages} onChange={handleMessages} />
 
+        <p className="text-cyan flex justify-center font-bold">{success}</p>
+
         <button type="submit" className="w-full rounded-lg border text-white h-12 font-bold text-xl hover:bg-orange/50 bg-orange/80 transition-all duration-500"> Send </button>
+
       </form>
     </div>
   );
