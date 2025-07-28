@@ -26,7 +26,7 @@ function App() {
           <HamsterLoader />
         </div>
       ) : (
-        <div className="w-full max-w-[100vw] overflow-x-hidden relative">
+        <div className="w-full  max-w-[100vw] overflow-x-hidden relative">
           <video
             autoPlay
             loop

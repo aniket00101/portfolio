@@ -27,7 +27,7 @@ function Chatbot() {
         </div>
 
         <div className="flex border-t border-gray-200">
-          <input type="text" className="flex-1 backdrop-blur-xl bg-black/20 border-white border-2 p-2 text-sm outline-none" value={input} onChange={(e) => setInput(e.target.value)} onKeyDown={(e) => e.key === "Enter" && sendMessage()} placeholder="Type a message..."/>
+          <input type="text" className="flex-1 backdrop-blur-xl bg-black/20 border-t-white border-t-2 border-r-2 border-r-white p-2 text-sm outline-none" value={input} onChange={(e) => setInput(e.target.value)} onKeyDown={(e) => e.key === "Enter" && sendMessage()} placeholder="Type a message..."/>
           <button onClick={sendMessage} className="px-3 border-white border-t-2 text-orange-500 text-white font-bold">➤</button>
         </div>
       </div>
