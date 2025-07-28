@@ -47,8 +47,8 @@ function Navbarmain() {
                 <div className="flex sm:block sm:p-2 backdrop-blur-[9px] items-center justify-center rounded-full border-[2px] border-orange lg:p-6">
                     <button className="text-2xl p-3 border-[2px] border-orange rounded-full text-white"
                     onClick={toggleChat}><TbMessageChatbot /></button>
-                {chatOpen && <Chatbot />}
                 </div>
+                {chatOpen && <Chatbot />}
                 <div className="flex sm:block sm:p-2 backdrop-blur-[9px] items-center justify-center rounded-full border-[2px] border-orange lg:p-6">
                     <button className="text-2xl p-3 border-[2px] border-orange rounded-full text-white"
                     onClick={toggleTheme}>{darkTheme ? <BsSun /> : <BsMoon />}</button>
