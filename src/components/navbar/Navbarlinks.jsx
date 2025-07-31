@@ -21,11 +21,11 @@ function Navbarlinks() {
             smooth={true}
             duration={600}
             offset={-70}
-            className="cursor-pointer text-white hover:text-cyan transition-all duration-500"
+            className="cursor-pointer text-white hover:text-cyan transition-all duration-500 flex flex-col items-center"
           >
             {link.link}
+            <div className="bg-cyan w-0 group-hover:w-full h-[1px] transition-all duration-500"></div>
           </Link>
-          <div className="mx-auto bg-cyan w-0 group-hover:w-full h-[1px] transition-all duration-500"></div>
         </li>
       ))}
     </ul>
