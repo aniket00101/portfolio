@@ -13,11 +13,11 @@ const projects = [
     sourcecode: 'https://github.com/aniket00101/GreenHand-PR391'
   },
   {
-    name: '3D Book Design Portfolio Website',
+    name: 'MERN Stack Chatting App',
     align: 'left',
-    image: '/images/project/bookportfolio.png',
+    image: '/images/project/chattingApp.png',
     link: 'https://portfolio-book-design.vercel.app/',
-    sourcecode: 'https://github.com/aniket00101/Portfolio-Book-design-'
+    sourcecode: 'https://github.com/aniket00101/MERN-RealTime-Chatting-App'
   }  
 ]
 const ProjectMain = () => {
