@@ -15,7 +15,7 @@ const projects = [
   {
     name: 'MERN Stack Chatting App',
     align: 'left',
-    image: '/images/project/chattingApp.png',
+    image: '/images/project/chatbuddies.png',
     link: 'https://portfolio-book-design.vercel.app/',
     sourcecode: 'https://github.com/aniket00101/MERN-RealTime-Chatting-App'
   }  
