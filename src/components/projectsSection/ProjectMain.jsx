@@ -15,9 +15,9 @@ const projects = [
   {
     name: 'Chat Buddies(MERN stack project)',
     align: 'left',
-    image: '/images/project/chattingApp.png',
-    link: 'https://portfolio-book-design.vercel.app/',
-    sourcecode: 'https://github.com/aniket00101/MERN-RealTime-Chatting-App'
+    image: '/images/project/chatbuddies.png',
+    link: 'https://chat-buddies.vercel.app/',
+    sourcecode: 'https://github.com/aniket00101/Chat-Buddies'
   }  
 ]
 const ProjectMain = () => {
