@@ -13,11 +13,11 @@ const projects = [
     sourcecode: 'https://github.com/aniket00101/GreenHand-PR391'
   },
   {
-    name: 'MERN Stack Chatting App',
+    name: 'Chat Buddies(MERN stack project)',
     align: 'left',
     image: '/images/project/chattingApp.png',
-    link: 'https://portfolio-book-design.vercel.app/',
-    sourcecode: 'https://github.com/aniket00101/MERN-RealTime-Chatting-App'
+    link: 'https://chat-buddies.vercel.app/',
+    sourcecode: 'https://github.com/aniket00101/Chat-Buddies'
   }  
 ]
 const ProjectMain = () => {
