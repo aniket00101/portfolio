@@ -115,7 +115,7 @@ function Chatbot() {
     }
 
     portfolioData.projects.forEach(project => {
-      if (message.includes(project.name.toLowerCase()) || message.includes('ecommerce') || message.includes('dashboard') || message.includes('chatbot')) {
+      if (message.includes(project.name.toLowerCase()) || message.includes('Lunexa') || message.includes('Green Hand') || message.includes('Chat Buddies')) {
         return `**${project.name}** \n\n${project.description}\n\n Technologies: ${project.tech.join(', ')}\n Features:\n${project.features.map(f => `• ${f}`).join('\n')}\n Status: ${project.status}\n\nWould you like to see more projects or learn about the development process?`;
       }
     });
