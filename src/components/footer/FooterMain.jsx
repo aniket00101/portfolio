@@ -3,11 +3,12 @@ import React from 'react'
 
 const links = [
     { link: "Home", section: "home" },
-    { link: "About Me", section: "about" },
-    { link: "Skills", section: "skills" },
-    { link: "Experience", section: "experience" },
-    { link: "Projects", section: "projects" },
-    { link: "Contact Me", section: "contact" },
+  { link: "About Me", section: "about" },
+  { link: "Skills", section: "skills" },
+  { link: "Projects", section: "projects" },
+  { link: "Certificate", section: "certificate" },
+  { link: "Experience", section: "experience" },
+  { link: "Contact Me", section: "contact" },
 ]
 
 const FooterMain = () => {
