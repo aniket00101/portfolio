@@ -28,7 +28,16 @@ function App() {
           <HamsterLoader />
         </div>
       ) : (
-        <div className="w-full  max-w-[100vw] overflow-x-hidden relative">
+        <div className="w-full  max-w-[100vw] overflow-x-hidden relative ">
+          <div
+            className="fixed top-0 left-0 w-screen h-screen object-cover z-0"
+            style={{
+              backgroundImage: "url('/back.png')",  // path to your background image
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
+          ></div>
           <video
             autoPlay
             loop
@@ -60,4 +69,3 @@ function App() {
 }
 
 export default App;
-

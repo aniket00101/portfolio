@@ -8,7 +8,7 @@ const SingleCertificate = ({ name, align, image, date }) => {
       <motion.div variants={fadeIn('up', 0.2)} initial="hidden" whileInView="show" viewport={{ once: false, amount: 0 }}>
         <h2 className="md:text-3xl sm:text-2xl text-orange">{name}</h2>
         <div className="flex gap-10 justify-center">
-                  <p className={`text-lg mt-[10px] flex gap-2 items-center text-cyan hover:text-orange transition-all duration-500  cursor-pointer sm:justify-self-center ${align==="left" ? "md:justify-self-end" : "md:justify-seld-start"}`}>{date}</p>
+                  <p className={`text-lg mt-[10px] flex gap-2 items-center text-cyan hover:text-orange transition-all duration-500  cursor-pointer sm:justify-self-center ${align==="left" ? "md:justify-self-end" : "md:justify-seld-start"}`}>Date: {date}</p>
                   
                 </div>
       </motion.div>
