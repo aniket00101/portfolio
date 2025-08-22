@@ -9,7 +9,8 @@ import ProjectMain from "./components/projectsSection/ProjectMain";
 import ContactMeMain from "./components/contactSection/ContactMeMain";
 import FooterMain from "./components/footer/FooterMain";
 import { HeroGradient } from "./components/heroSection/HeroGradient";
-import Certificate from "./components/certificates/Certificate";
+import CertificateMain from "./components/certificate/CertificateMain";
+
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -46,9 +47,8 @@ function App() {
             <AboutMeMain />
             <SkillsMain />
             <ProjectMain />
-            <Certificate />
+            <CertificateMain />
             <ExperienceMain />
-            
             <ContactMeMain />
             <FooterMain />
           </div>
