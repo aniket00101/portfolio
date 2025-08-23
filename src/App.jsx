@@ -29,22 +29,10 @@ function App() {
         </div>
       ) : (
         <div className="w-full  max-w-[100vw] overflow-x-hidden relative ">
-          <div
-            className="fixed top-0 left-0 w-screen h-screen object-cover z-0"
-            style={{
-              backgroundImage: "url('/back.png')",  // path to your background image
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-            }}
-          ></div>
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="fixed top-0 left-0 w-screen h-screen object-cover z-0"
-          >
+          <div className="fixed top-0 left-0 w-screen h-screen object-cover z-0" style={{backgroundImage: "url('/back.png')", backgroundSize: "cover",backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",}}></div>
+          
+          <video autoPlay loop muted playsInline className="fixed top-0 left-0 w-screen h-screen object-cover z-0" >
             <source src="/video/background.mp4" type="video/mp4" />
           </video>
           <div className="fixed top-0 left-0 w-screen h-screen z-5 pointer-events-none">

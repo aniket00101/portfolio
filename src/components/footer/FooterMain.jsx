@@ -23,7 +23,7 @@ const FooterMain = () => {
                 })}
             </ul>
         </div>
-        <p className="max-w-[1200px] max-auto text-right mt-2 mb-12 text-sm text-white">© 2025 Aniket | All Rights Reserved.</p>
+        <p className="max-w-[1200px] max-auto text-left lg:text-right mt-2 mb-12 text-sm text-white">© 2025 Aniket | All Rights Reserved.</p>
     </div>
   )
 }
