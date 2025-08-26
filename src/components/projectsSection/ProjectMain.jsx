@@ -13,7 +13,7 @@ const projects = [
     sourcecode: 'https://github.com/aniket00101/GreenHand-PR391'
   },
   {
-    name: 'Chat Buddies(MERN stack project)',
+    name: 'Chat Buddies(MERN Stack Real Time Chatting App)',
     align: 'left',
     image: '/images/project/chatbuddies.png',
     link: 'https://chat-buddies.vercel.app/',
