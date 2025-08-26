@@ -18,6 +18,13 @@ const projects = [
     image: '/images/project/chatbuddies.png',
     link: 'https://chat-buddies.vercel.app/',
     sourcecode: 'https://github.com/aniket00101/Chat-Buddies'
+  },
+  {
+    name: 'Virtual Assistant (Voice Assistant App)',
+    align: 'right',
+    image: '/images/project/voiceassistant.png',
+    link: 'https://lunexa-ai-voice-assistant-frontend.onrender.com/',
+    sourcecode: 'https://github.com/aniket00101/LUNEXA-AI-Voice-Assistant-'
   }  
 ]
 const ProjectMain = () => {
