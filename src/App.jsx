@@ -8,8 +8,8 @@ import ExperienceMain from "./components/experience/ExperienceMain";
 import ProjectMain from "./components/projectsSection/ProjectMain";
 import ContactMeMain from "./components/contactSection/ContactMeMain";
 import FooterMain from "./components/footer/FooterMain";
-import { HeroGradient } from "./components/heroSection/HeroGradient";
 import CertificateMain from "./components/certificate/CertificateMain";
+import DarkSpaceBackground from "./components/background/background";
 
 
 function App() {
@@ -28,15 +28,9 @@ function App() {
           <HamsterLoader />
         </div>
       ) : (
-        <div className="w-full  max-w-[100vw] overflow-x-hidden relative ">
-          <div className="fixed top-0 left-0 w-screen h-screen object-cover z-0" style={{backgroundImage: "url('/back.png')", backgroundSize: "cover",backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",}}></div>
-          
-          <video autoPlay loop muted playsInline className="fixed top-0 left-0 w-screen h-screen object-cover z-0" >
-            <source src="/video/background.mp4" type="video/mp4" />
-          </video>
+        <div className="w-full max-w-[100vw] overflow-x-hidden relative ">
           <div className="fixed top-0 left-0 w-screen h-screen z-5 pointer-events-none">
-            <HeroGradient />
+            <DarkSpaceBackground />
           </div>
           <div className="pt-3 px-5 w-full dark:bg-red-600 relative z-10">
             <Navbarmain />

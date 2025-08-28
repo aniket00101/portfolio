@@ -219,7 +219,7 @@ function Chatbot() {
   };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-40 p-4 mt-[50vh]">
+    <div className="fixed inset-0 flex items-center justify-center z-40 p-4 mt-[40vh]">
       <div className="w-full max-w-md backdrop-blur-[50px] border-gray-300 rounded-lg shadow-lg flex flex-col border-white border-2">
         <div className="p-3 text-white text-xl rounded-t-lg text-center font-semibold">Chat with Aniket
           <div className="text-xs opacity-75 mt-1">Portfolio Assistant</div>
