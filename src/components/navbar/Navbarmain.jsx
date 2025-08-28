@@ -4,7 +4,6 @@ import Navbarlinks from "./Navbarlinks";
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { useState, useEffect } from "react";
 import Chatbot from "./chatbot";
-import { BsSun, BsMoon } from "react-icons/bs";
 import ColorfulChatbotLogo from '/chatbot.jpg';
 
 function Navbarmain() {
@@ -45,17 +44,13 @@ function Navbarmain() {
                         <GiHamburgerMenu />
                     </button>
                 </div>
+
                 
                 <div className={`lg:hidden ${menuOpen ? "block" : "hidden"}`}>
                     <Navbarlinks />
                 </div>
+                  
             </nav>
-
-            {/* <div className="fixed bottom-[109px] right-6 z-50 w-[70px] h-[70px] rounded-full border-[2px] border-white backdrop-blur-[9px] bg-white dark:bg-gray-900">
-            
-                <button className="w-full h-full flex items-center justify-center rounded-full" onClick={toggleTheme}>{darkTheme ? <BsSun /> : <BsMoon />}</button>
-
-            </div>             */}
 
             <div className="fixed bottom-6 right-6 z-50 w-[70px] h-[70px] rounded-full border-[2px] border-white backdrop-blur-[9px] bg-white dark:bg-gray-900">
                 <button className="w-full h-full flex items-center justify-center rounded-full" onClick={toggleChat}>
@@ -67,3 +62,5 @@ function Navbarmain() {
 }
 
 export default Navbarmain;
+
+

@@ -10,6 +10,7 @@ import ContactMeMain from "./components/contactSection/ContactMeMain";
 import FooterMain from "./components/footer/FooterMain";
 import CertificateMain from "./components/certificate/CertificateMain";
 import DarkSpaceBackground from "./components/background/background";
+import AnimatedPortfolio from "./components/test";
 
 
 function App() {
@@ -51,3 +52,4 @@ function App() {
 }
 
 export default App;
+

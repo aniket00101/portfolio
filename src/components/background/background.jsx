@@ -4,7 +4,6 @@ const DarkSpaceBackground = () => {
   const [stars, setStars] = useState([]);
   const [shootingStars, setShootingStars] = useState([]);
 
-  // Generate random stars
   useEffect(() => {
     const generateStars = () => {
       const newStars = [];
@@ -25,7 +24,6 @@ const DarkSpaceBackground = () => {
     generateStars();
   }, []);
 
-  // Generate shooting stars periodically
   useEffect(() => {
     const generateShootingStar = () => {
       const newShootingStar = {
@@ -57,57 +55,23 @@ const DarkSpaceBackground = () => {
     <div className="relative w-full h-screen overflow-hidden" style={{ 
       background: 'radial-gradient(ellipse at center, #0f0f23 0%, #050505 50%, #000000 100%)' 
     }}>
-      {/* Deep space nebula effects */}
+
       <div className="absolute inset-0 opacity-20">
-        <div 
-          className="absolute top-1/6 left-1/5 w-96 h-96 rounded-full blur-3xl opacity-30 animate-pulse"
-          style={{ 
-            background: 'radial-gradient(circle, rgba(75, 0, 130, 0.4) 0%, rgba(25, 25, 112, 0.2) 40%, transparent 70%)',
-            animationDuration: '8s'
-          }}
-        ></div>
-        <div 
-          className="absolute bottom-1/5 right-1/6 w-80 h-80 rounded-full blur-3xl opacity-25 animate-pulse" 
-          style={{ 
-            background: 'radial-gradient(circle, rgba(0, 0, 139, 0.3) 0%, rgba(72, 61, 139, 0.15) 40%, transparent 70%)',
-            animationDelay: '2s',
-            animationDuration: '12s'
-          }}
-        ></div>
-        <div 
-          className="absolute top-2/3 left-1/2 w-64 h-64 rounded-full blur-3xl opacity-15 animate-pulse" 
-          style={{ 
-            background: 'radial-gradient(circle, rgba(138, 43, 226, 0.2) 0%, rgba(75, 0, 130, 0.1) 40%, transparent 70%)',
-            animationDelay: '4s',
-            animationDuration: '10s'
-          }}
-        ></div>
+        <div className="absolute top-1/6 left-1/5 w-96 h-96 rounded-full blur-3xl opacity-30 animate-pulse" style={{ background: 'radial-gradient(circle, rgba(75, 0, 130, 0.4) 0%, rgba(25, 25, 112, 0.2) 40%, transparent 70%)',animationDuration: '8s'}}></div>
+        <div className="absolute bottom-1/5 right-1/6 w-80 h-80 rounded-full blur-3xl opacity-25 animate-pulse" style={{ background: 'radial-gradient(circle, rgba(0, 0, 139, 0.3) 0%, rgba(72, 61, 139, 0.15) 40%, transparent 70%)',animationDelay: '2s',animationDuration: '12s' }}></div>
+        <div className="absolute top-2/3 left-1/2 w-64 h-64 rounded-full blur-3xl opacity-15 animate-pulse" style={{ background: 'radial-gradient(circle, rgba(138, 43, 226, 0.2) 0%, rgba(75, 0, 130, 0.1) 40%, transparent 70%)',animationDelay: '4s', animationDuration: '10s'
+          }}></div>
       </div>
 
-      {/* Distant galaxy glow */}
       <div className="absolute inset-0 opacity-10">
-        <div 
-          className="absolute top-1/4 right-1/3 w-32 h-32 rounded-full blur-2xl"
-          style={{ 
-            background: 'radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%)',
-            animation: 'pulse 15s ease-in-out infinite'
-          }}
-        ></div>
-        <div 
-          className="absolute bottom-1/3 left-1/4 w-24 h-24 rounded-full blur-2xl"
-          style={{ 
-            background: 'radial-gradient(circle, rgba(173, 216, 230, 0.08) 0%, transparent 70%)',
-            animation: 'pulse 18s ease-in-out infinite',
-            animationDelay: '6s'
-          }}
-        ></div>
+        <div className="absolute top-1/4 right-1/3 w-32 h-32 rounded-full blur-2xl"
+          style={{ background: 'radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%)',animation: 'pulse 15s ease-in-out infinite'}}></div>
+        <div className="absolute bottom-1/3 left-1/4 w-24 h-24 rounded-full blur-2xl"
+          style={{ background: 'radial-gradient(circle, rgba(173, 216, 230, 0.08) 0%, transparent 70%)',animation: 'pulse 18s ease-in-out infinite',animationDelay: '6s'}}></div>
       </div>
 
-      {/* Main stars */}
       {stars.map((star) => (
-        <div
-          key={star.id}
-          className="absolute bg-white rounded-full"
+        <div key={star.id} className="absolute bg-white rounded-full"
           style={{
             left: `${star.x}%`,
             top: `${star.y}%`,
@@ -121,11 +85,8 @@ const DarkSpaceBackground = () => {
         />
       ))}
 
-      {/* Shooting stars */}
       {shootingStars.map((shootingStar) => (
-        <div
-          key={shootingStar.id}
-          className="absolute w-1 h-1 bg-white rounded-full"
+        <div key={shootingStar.id} className="absolute w-1 h-1 bg-white rounded-full"
           style={{
             left: `${shootingStar.startX}%`,
             top: `${shootingStar.startY}%`,
@@ -135,12 +96,9 @@ const DarkSpaceBackground = () => {
         />
       ))}
 
-      {/* Additional twinkling stars */}
       <div className="absolute inset-0">
         {[...Array(30)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-0.5 h-0.5 bg-white rounded-full opacity-60"
+          <div key={i} className="absolute w-0.5 h-0.5 bg-white rounded-full opacity-60"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -184,7 +142,6 @@ const DarkSpaceBackground = () => {
         }
       `}</style>
 
-      {/* Content area - you can place your content here */}
       <div className="relative z-10 flex items-center justify-center h-full">
         
       </div>
