@@ -38,13 +38,14 @@ function Navbarmain() {
                         <Navbarlinks />
                     </div>
                 </div>
-                {chatOpen && <Chatbot />}
+                
                 <div className="flex lg:hidden sm:block sm:p-2 backdrop-blur-[9px] items-center justify-center rounded-full border-[2px] border-orange">
                     <button className="text-2xl p-3 border-[2px] border-orange rounded-full text-white" onClick={toggleMenu}>
                         <GiHamburgerMenu />
                     </button>
                 </div>
 
+                {chatOpen && <Chatbot />}
                 
                 <div className={`lg:hidden ${menuOpen ? "block" : "hidden"}`}>
                     <Navbarlinks />
