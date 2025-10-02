@@ -10,8 +10,6 @@ import ContactMeMain from "./components/contactSection/ContactMeMain";
 import FooterMain from "./components/footer/FooterMain";
 import CertificateMain from "./components/certificate/CertificateMain";
 import DarkSpaceBackground from "./components/background/background";
-import AnimatedPortfolio from "./components/test";
-
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -30,10 +28,10 @@ function App() {
         </div>
       ) : (
         <div className="w-full max-w-[100vw] overflow-x-hidden relative ">
-          <div className="fixed top-0 left-0 w-screen h-screen z-5 pointer-events-none">
+          <div className="fixed top-0 left-0 w-screen h-screen z-5 pointer-events-none scrollbar-hide">
             <DarkSpaceBackground />
           </div>
-          <div className="pt-3 px-5 w-full dark:bg-red-600 relative z-10">
+          <div className="pt-3 px-5 w-full dark:bg-red-600 relative z-10 scrollbar-hide">
             <Navbarmain />
             <HeroMain />
             <AboutMeMain />
@@ -52,4 +50,3 @@ function App() {
 }
 
 export default App;
-
