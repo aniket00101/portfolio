@@ -21,7 +21,13 @@ const projects = [
     image: '/images/project/voiceassistant.png',
     link: 'https://lunexa-ai-voice-assistant-frontend.onrender.com/',
     sourcecode: 'https://github.com/aniket00101/LUNEXA-AI-Voice-Assistant-'
-  }  
+  },
+  {
+    name: 'Real-Time Weather Forecasting and Visualization System',
+    image: '/images/project/weather.png',
+    link: 'https://weather-forecast-puce-seven.vercel.app/',
+    sourcecode: 'https://github.com/aniket00101/Weather-Forecast'
+  } 
 ]
 
 const ProjectMain = () => {
