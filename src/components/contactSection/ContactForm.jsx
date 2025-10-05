@@ -2,6 +2,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { db } from './firebase';
 import { collection, addDoc, Timestamp, getDocs, deleteDoc, doc, orderBy, query } from 'firebase/firestore';
+import AnalogClock from './Clock';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
@@ -68,7 +69,6 @@ const ContactForm = () => {
   const sendDataToFirebase = async (e) => {
     e.preventDefault();
 
-    // Check if admin credentials
     if (name.toLowerCase() === import.meta.env.VITE_NAME && email.toLowerCase() === import.meta.env.VITE_EMAIL && messages.toLowerCase() === import.meta.env.VITE_NAME) {
       setShowAdmin(true);
       fetchMessages();
@@ -101,19 +101,29 @@ const ContactForm = () => {
   return (
     <div>
 
-      <form className="flex flex-col gap-4 text-white mt-6" ref={form} onSubmit={sendDataToFirebase}>
+      <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 mt-6">
+        
+        <div className="flex-1">
+          <form className="flex flex-col gap-4 text-white" ref={form} onSubmit={sendDataToFirebase}>
 
-        <p className="text-cyan flex justify-center font-bold">{success}</p>
+            <p className="text-cyan flex justify-center font-bold">{success}</p>
 
-        <input type="text" name="from_name" placeholder="Your Name" required className="h-12 bg-black/25 px-2 border-b-2 rounded-lg border-b-orange focus:outline-none focus:border-orange border-l-2 border-l-orange"value={name} onChange={handleName} />
+            <input type="text" name="from_name" placeholder="Your Name" required className="h-12 bg-black/25 px-2 border-b-2 rounded-lg border-b-orange focus:outline-none focus:border-orange border-l-2 border-l-orange"value={name} onChange={handleName} />
 
-        <input type="email" name="from_email" placeholder="Your Email" required className="h-12 rounded-lg bg-black/25 px-2 border-b-2 border-orange bg-transparent focus:outline-none backdrop-blur-[10px] focus:border-orange border-l-2 border-l-orange" value={email} onChange={handleEmail} />
+            <input type="email" name="from_email" placeholder="Your Email" required className="h-12 rounded-lg bg-black/25 px-2 border-b-2 border-orange bg-transparent focus:outline-none backdrop-blur-[10px] focus:border-orange border-l-2 border-l-orange" value={email} onChange={handleEmail} />
 
-        <textarea name="messages" placeholder="Message" rows="9" cols="50" required className="rounded-lg bg-black/25 border-b-2 p-2 border-orange bg-transparent border-l-2 border-l-orange focus:outline-none backdrop-blur-[10px]" value={messages} onChange={handleMessages} />
+            <textarea name="messages" placeholder="Message" rows="9" cols="50" required className="rounded-lg bg-black/25 border-b-2 p-2 border-orange bg-transparent border-l-2 border-l-orange focus:outline-none backdrop-blur-[10px]" value={messages} onChange={handleMessages} />
 
-        <button type="submit" className="w-full rounded-lg border text-white h-12 font-bold text-xl hover:bg-orange/50 bg-orange/80 transition-all duration-500">Send</button>
+            <button type="submit" className="w-full rounded-lg border text-white h-12 font-bold text-xl hover:bg-orange/50 bg-orange/80 transition-all duration-500">Send</button>
 
-      </form>
+          </form>
+        </div>
+
+        <div className="flex-1 flex items-center justify-center">
+          <AnalogClock />
+        </div>
+
+      </div>
 
       {showAdmin && (
         <div className="mt-12 border-t-2 border-orange pt-8">

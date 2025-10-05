@@ -1,7 +1,5 @@
 import React from 'react'
 import { ContactMeleft } from './ContactMeleft'
-import AnalogClock from './Clock'
-
 
 const ContactMeMain = () => {
   return (
@@ -10,7 +8,6 @@ const ContactMeMain = () => {
         <div className="flex justify-between gap-24 border-[2px] backdrop-blur-lg border-orange p-5 rounded-2xl lg:flex-row sm:flex-col">
             <ContactMeleft />
            
-            <AnalogClock />
         </div>
     </div>
   )

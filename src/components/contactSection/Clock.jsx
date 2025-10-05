@@ -39,9 +39,7 @@ const AnalogClock = () => {
       <div className="border-2 border-orange rounded-2xl backdrop-blur-xl bg-black/30 p-4 sm:p-6 md:p-8 shadow-2xl w-full">
         <div className="mb-4 sm:mb-6 text-center border-b-2 border-orange/90 pb-3 sm:pb-4">
           <h3 className="text-cyan text-xs sm:text-sm font-semibold mb-2">TODAY'S DATE</h3>
-          <p className="text-white text-base sm:text-lg md:text-xl lg:text-2xl font-bold break-words sm:whitespace-nowrap">
-            {dateString}
-          </p>
+          <p className="text-white font-semibold text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl break-words whitespace-normal sm:whitespace-nowrap text-center sm:text-left px-2">{dateString}</p>
         </div>
 
         <div className="text-center">
