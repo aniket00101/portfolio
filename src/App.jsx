@@ -10,6 +10,7 @@ import ContactMeMain from "./components/contactSection/ContactMeMain";
 import FooterMain from "./components/footer/FooterMain";
 import CertificateMain from "./components/certificate/CertificateMain";
 import DarkSpaceBackground from "./components/background/background";
+import ContactMeright from "./components/SocialLinks/ContactMeright";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -39,6 +40,7 @@ function App() {
             <ProjectMain />
             <CertificateMain />
             <ExperienceMain />
+            <ContactMeright />
             <ContactMeMain />
             <FooterMain />
           </div>
