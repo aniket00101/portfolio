@@ -23,17 +23,17 @@ const projects = [
     sourcecode: 'https://github.com/aniket00101/LUNEXA-AI-Voice-Assistant-'
   },
   {
-    name: 'Video Calling App(WebRtc)',
+    name: 'Dishari Art Gallery (Client Project)',
+    image: '/images/project/DishariArtGallery.png',
+    link: 'https://dishari-art-gallery.vercel.app/',
+    sourcecode: 'https://github.com/aniket00101/dishari_Art_Gallery'
+  },
+  {
+    name: 'Video Calling App (WebRtc)',
     image: '/images/project/videocall.png',
     link: 'https://webrtc-video-calling-app-1.onrender.com/',
     sourcecode: 'https://github.com/aniket00101/WEBRTC-Video-Calling-App'
-  },
-  {
-    name: 'Real-Time Weather Forecasting and Visualization System',
-    image: '/images/project/weather.png',
-    link: 'https://weather-forecast-puce-seven.vercel.app/',
-    sourcecode: 'https://github.com/aniket00101/Weather-Forecast'
-  } 
+  }, 
 ]
 
 const ProjectMain = () => {
