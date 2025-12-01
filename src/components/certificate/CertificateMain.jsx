@@ -20,6 +20,16 @@ const certificates = [
     image: '/images/certificates/Hackthon.jpg',
   },
   {
+    title: 'Ideon 2025',
+    date: 'Date: October 14 2025',
+    image: '/images/certificates/Ideon2025.jpg',
+  },
+  {
+    title: 'Programming in Java',
+    date: 'Date: October 25 2025',
+    image: '/images/certificates/java.png',
+  },
+  {
     title: 'Python Programming',
     date: 'Date: February 12 2025',
     image: '/images/certificates/python with Django.jpeg',
