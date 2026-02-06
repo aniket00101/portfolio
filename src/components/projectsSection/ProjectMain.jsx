@@ -23,6 +23,12 @@ const projects = [
     sourcecode: 'https://github.com/aniket00101/LUNEXA-AI-Voice-Assistant-'
   },
   {
+    name: 'Ai-Powered Resume Builder App',
+    image: '/images/project/Resume.png',
+    link: 'https://ai-zeta-two-77.vercel.app/',
+    sourcecode: 'https://github.com/aniket00101/Ai-Resume-Builder-Application'
+  },
+  {
     name: 'Weather Forecast App',
     image: '/images/project/weather.png',
     link: 'https://weather-forecast-puce-seven.vercel.app/',
