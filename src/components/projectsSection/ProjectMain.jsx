@@ -5,6 +5,12 @@ import { fadeIn } from '../framerMotion/variants'
 
 const projects = [
   {
+    name: 'NextMart - MERN E-Commerce Platform',
+    image: '/images/project/ecommerce.png',
+    link: 'https://ecommercefrontenddeploy-one.vercel.app/',
+    sourcecode: 'https://github.com/aniket00101/MERN-STack-E-Commerce'
+  },
+  {
     name: 'Green Hand (Crop Recommendation and Price Prediction Project)',
     image: '/images/project/greenHand.png',
     link: 'https://greenhand-pr391.onrender.com/',
