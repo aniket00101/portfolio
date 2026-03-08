@@ -25,6 +25,11 @@ const certificates = [
     image: '/images/certificates/Ideon2025.jpg',
   },
   {
+    title: 'ShadowFox Internship',
+    date: 'Date: 31st February 2025',
+    image: '/images/certificates/shadowfox.png',
+  },
+  {
     title: 'Programming in Java',
     date: 'Date: October 25 2025',
     image: '/images/certificates/java.png',
