@@ -43,7 +43,7 @@ const projects = [
   {
     name: 'Video Calling App (WebRTC)',
     image: '/images/project/videocalling.png',
-    link: 'https://webrtc-video-calling-app-1.onrender.com/',
+    link: 'https://video-calling-app-webrtc-omega.vercel.app/',
     sourcecode: 'https://github.com/aniket00101/WEBRTC-Video-Calling-App'
   },
 ]
