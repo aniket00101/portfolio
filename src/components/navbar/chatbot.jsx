@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { FaRobot, FaUserLarge } from "react-icons/fa6";
 
-const API_URL = "https://aniket-chatbot-api.onrender.com";
+const API_URL = "https://aniket-portfolio-chatbot.onrender.com";
 
 function Chatbot() {
   const [messages, setMessages] = useState([
