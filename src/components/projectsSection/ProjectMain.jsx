@@ -11,10 +11,10 @@ const projects = [
     sourcecode: 'https://github.com/aniket00101/MERN-STack-E-Commerce'
   },
   {
-    name: 'Green Hand (Crop Recommendation and Price Prediction Project)',
-    image: '/images/project/greenHand.png',
-    link: 'https://greenhand-pr391.onrender.com/',
-    sourcecode: 'https://github.com/aniket00101/GreenHand-PR391'
+    name: 'Green Hand (Next-Gen Agriculture Platform)',
+    image: '/images/project/greenhand.png',
+    link: 'https://green-hand-ai.vercel.app/',
+    sourcecode: 'https://github.com/aniket00101/GreenHand_V-2.0.0_Frontend'
   },
   {
     name: 'Chat Buddies (MERN Stack Real Time Chatting App)',
@@ -65,6 +65,7 @@ const ProjectMain = () => {
               </div>
 
               <div className="p-5 flex-1 flex flex-col">
+                
                 <h3 className="text-xl font-bold text-white mb-4">{project.name}</h3>
                 
                 <div className="flex items-center gap-3 mt-auto pt-3 border-t border-white/50">
