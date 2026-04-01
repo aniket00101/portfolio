@@ -1,27 +1,61 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from "react";
 import { FaRobot, FaUserLarge } from "react-icons/fa6";
+import ColorfulChatbotLogo from "/chatbot.jpg";
 
 const API_URL = "https://aniket-portfolio-chatbot.onrender.com";
 
-function Chatbot() {
+const TypingDots = () => (
+  <div className="flex items-center gap-[5px]">
+    {[0, 1, 2].map((i) => (
+      <span
+        key={i}
+        className="w-[7px] h-[7px] rounded-full bg-white/80 inline-block"
+        style={{
+          animation: "dotBounce 1.2s infinite ease-in-out",
+          animationDelay: `${i * 0.18}s`,
+        }}
+      />
+    ))}
+  </div>
+);
+
+const fmt = (d) =>
+  d.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+
+const SUGGESTIONS = [
+  "Who is Aniket?",
+  "What are his skills?",
+  "Show me his projects",
+  "How to contact him?",
+];
+
+export default function Chatbot() {
+  const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
-    { from: "bot", text: "Hi! I'm Aniket's AI assistant. How can I help you today? ", timestamp: new Date() }
+    {
+      from: "bot",
+      text: "Hi! I'm Aniket's AI assistant. How can I help you today?",
+      ts: new Date(),
+    },
   ]);
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
-  const messagesEndRef = useRef(null);
+  const bottomRef = useRef(null);
+  const inputRef = useRef(null);
 
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
+    if (isOpen) setTimeout(() => inputRef.current?.focus(), 300);
+  }, [isOpen]);
 
-  const sendMessage = async () => {
-    if (input.trim() === "") return;
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages, isTyping]);
 
-    const userMessage = input;
-    const timestamp = new Date();
+  const sendMessage = async (text) => {
+    const msg = (text ?? input).trim();
+    if (!msg) return;
 
-    setMessages(prev => [...prev, { from: "user", text: userMessage, timestamp }]);
+    setMessages((p) => [...p, { from: "user", text: msg, ts: new Date() }]);
     setInput("");
     setIsTyping(true);
 
@@ -29,97 +63,287 @@ function Chatbot() {
       const res = await fetch(`${API_URL}/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: userMessage }),
+        body: JSON.stringify({ message: msg }),
       });
-
-      if (!res.ok) throw new Error("API error");
-
+      if (!res.ok) throw new Error();
       const data = await res.json();
-
-      setMessages(prev => [...prev, {
-        from: "bot",
-        text: data.reply,
-        timestamp: new Date()
-      }]);
-
+      setMessages((p) => [...p, { from: "bot", text: data.reply, ts: new Date() }]);
     } catch {
-      setMessages(prev => [...prev, {
-        from: "bot",
-        text: "Sorry, I'm having trouble connecting right now. Please try again! 🙁",
-        timestamp: new Date()
-      }]);
+      setMessages((p) => [
+        ...p,
+        {
+          from: "bot",
+          text: "Sorry, I'm having trouble connecting right now. Please try again! 🙁",
+          ts: new Date(),
+        },
+      ]);
     } finally {
       setIsTyping(false);
     }
   };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-40 p-4 mt-[50vh]">
-      <div className="w-full max-w-md backdrop-blur-[50px] border-gray-300 rounded-lg shadow-lg flex flex-col border-white border-2">
-        <div className="p-3 text-white text-xl rounded-t-lg text-center font-semibold">Chat with Aniket
-          <div className="text-xs opacity-75 mt-1">Portfolio Assistant</div>
-        </div>
-        <div className="p-3 h-64 overflow-y-auto text-sm">
-          {messages.map((msg, idx) => (
-            <div key={idx} className={`mb-2 flex items-start ${msg.from === "user" ? "justify-end" : "justify-start"}`}>
-              {msg.from === "bot" && (
-                <FaRobot className="w-5 h-5 text-white mr-2 mt-1 flex-shrink-0" />
-              )}
-              <div className={`flex flex-col ${msg.from === "user" ? "items-end" : "items-start"}`}>
-                <span className={`inline-block font-bold px-3 py-2 text-white rounded-lg max-w-[85%] ${msg.from === "user" ? "bg-blue-500/80" : "bg-gray-700/80"
-                  }`} style={{ wordBreak: 'break-word', whiteSpace: 'pre-line' }} >{msg.text}</span>
-                <span className="text-xs opacity-50 text-white mt-1">{msg.timestamp?.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
-              </div>
-              {msg.from === "user" && (
-                <FaUserLarge className="w-5 h-5 text-white ml-2 mt-1 flex-shrink-0" />
-              )}
-            </div>
-          ))}
-          
-          {isTyping && (
-            <div className="mb-2 flex items-center justify-start">
-              <FaRobot className="w-5 h-5 text-white mr-2" />
-              <span className="inline-block font-bold px-3 py-2 text-white rounded-lg bg-gray-700/80">
-                <span className="typing-indicator">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </span>
-                Typing...
-              </span>
-            </div>
-          )}
-          <div ref={messagesEndRef} />
-        </div>
-        <div className="flex border-t border-gray-200">
-          <input type="text" className="flex-1 backdrop-blur-xl text-white font-bold bg-black/20 border-t-white border-t-2 border-r-2 border-r-white p-2 text-md outline-none placeholder-gray-300" value={input} onChange={(e) => setInput(e.target.value)} onKeyDown={(e) => e.key === "Enter" && sendMessage()}
-            placeholder="Ask about Aniket..." disabled={isTyping}/>
-          <button onClick={sendMessage} disabled={isTyping} className="px-3 border-white text-white border-t-2 text-orange-500 font-bold hover:bg-white/10 transition-colors disabled:opacity-50">➤</button>
-        </div>
-      </div>
-      
-      <style jsx>{`
-        .typing-indicator {
-          display: inline-flex;
-          gap: 2px;
+    <>
+      <style>{`
+        @keyframes dotBounce {
+          0%, 80%, 100% { transform: translateY(0);    opacity: .45; }
+          40%            { transform: translateY(-6px); opacity: 1;   }
         }
-        .typing-indicator span {
-          width: 4px;
-          height: 4px;
-          border-radius: 50%;
-          background-color: currentColor;
-          animation: typing 1.4s infinite ease-in-out;
+        @keyframes slideUp {
+          from { opacity: 0; transform: translateY(24px) scale(.96); }
+          to   { opacity: 1; transform: translateY(0)    scale(1);   }
         }
-        .typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
-        .typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
-        
-        @keyframes typing {
-          0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
-          40% { transform: scale(1); opacity: 1; }
+        @keyframes pulseRing {
+          0%   { box-shadow: 0 0 0 0    rgba(251,146,60,.80); }
+          70%  { box-shadow: 0 0 0 11px rgba(251,146,60,0);   }
+          100% { box-shadow: 0 0 0 0    rgba(251,146,60,0);   }
         }
+        .chat-slide { animation: slideUp .28s cubic-bezier(.22,.68,0,1.2) forwards; }
+        .pulse-ring  { animation: pulseRing 2.2s infinite; }
+
+        /* custom scrollbar */
+        .chat-scroll::-webkit-scrollbar       { width: 3px; }
+        .chat-scroll::-webkit-scrollbar-track { background: transparent; }
+        .chat-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.25); border-radius: 4px; }
       `}</style>
-    </div>
+
+      {/* ════════════════ CHAT PANEL ════════════════ */}
+      {isOpen && (
+        <div className="chat-slide fixed bottom-24 right-5 z-50 flex flex-col rounded-2xl overflow-hidden"
+          style={{ width: "min(92vw, 390px)", height: "min(85vh, 560px)", background: "rgba(255, 255, 255, 0.08)", backdropFilter: "blur(40px)", WebkitBackdropFilter: "blur(40px)", border: "1.5px solid rgba(255, 255, 255, 0.30)", boxShadow: "0 8px 48px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.22)",
+          }}
+        >
+          {/* ── Header ── */}
+          <div
+            className="flex items-center gap-3 px-4 py-3 flex-shrink-0"
+            style={{
+              background: "rgba(255,255,255,0.10)",
+              borderBottom: "1px solid rgba(255,255,255,0.18)",
+            }}
+          >
+            {/* bot avatar */}
+            <div
+              className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
+              style={{
+                background: "rgba(255,255,255,0.15)",
+                border: "1.5px solid rgba(255,255,255,0.35)",
+              }}
+            >
+              <FaRobot className="text-white text-lg" />
+            </div>
+
+            <div className="flex-1">
+              <p className="text-white font-semibold text-sm tracking-wide">
+                Chat with Aniket
+              </p>
+              <div className="flex items-center gap-1.5 mt-0.5">
+                <span className="w-[7px] h-[7px] rounded-full bg-white/80 animate-pulse" />
+                <span className="text-white/60 text-[11px]">Portfolio Assistant</span>
+              </div>
+            </div>
+
+            <button
+              onClick={() => setIsOpen(false)}
+              className="w-8 h-8 rounded-full flex items-center justify-center text-white/70 hover:text-white hover:bg-white/15 transition-all text-sm font-bold cursor-pointer"
+              style={{ border: "1px solid rgba(255,255,255,0.25)" }}
+            >
+              ✕
+            </button>
+          </div>
+
+          {/* ── Messages ── */}
+          <div
+            className="chat-scroll flex-1 overflow-y-auto px-4 py-4 flex flex-col gap-3"
+            style={{ background: "rgba(255,255,255,0.03)" }}
+          >
+            {messages.map((msg, i) => {
+              const isBot = msg.from === "bot";
+              return (
+                <div
+                  key={i}
+                  className={`flex items-start gap-2 ${isBot ? "justify-start" : "justify-end"}`}
+                >
+                  {/* Bot avatar */}
+                  {isBot && (
+                    <div
+                      className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                      style={{
+                        background: "rgba(255,255,255,0.15)",
+                        border: "1px solid rgba(255,255,255,0.28)",
+                      }}
+                    >
+                      <FaRobot className="text-white text-[10px]" />
+                    </div>
+                  )}
+
+                  <div className={`flex flex-col gap-1 ${isBot ? "items-start" : "items-end"} max-w-[78%]`}>
+                    {/* Bubble — key fix: whitespace-pre-wrap + break-words so long replies wrap correctly */}
+                    <div
+                      className="px-4 py-2.5 rounded-2xl text-white text-[13.5px] leading-[1.6] whitespace-pre-wrap break-words w-full"
+                      style={{
+                        background: isBot
+                          ? "rgba(255,255,255,0.15)"
+                          : "rgba(255,255,255,0.22)",
+                        border: "1px solid rgba(255,255,255,0.22)",
+                        borderRadius: isBot
+                          ? "4px 18px 18px 18px"
+                          : "18px 4px 18px 18px",
+                        backdropFilter: "blur(8px)",
+                        WebkitBackdropFilter: "blur(8px)",
+                      }}
+                    >
+                      {msg.text}
+                    </div>
+
+                    <span className="text-white/35 text-[10px] px-1">
+                      {fmt(msg.ts)}
+                    </span>
+                  </div>
+
+                  {/* User avatar */}
+                  {!isBot && (
+                    <div
+                      className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                      style={{
+                        background: "rgba(255,255,255,0.15)",
+                        border: "1px solid rgba(255,255,255,0.28)",
+                      }}
+                    >
+                      <FaUserLarge className="text-white text-[10px]" />
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+
+            {/* Typing indicator */}
+            {isTyping && (
+              <div className="flex items-start gap-2 justify-start">
+                <div
+                  className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                  style={{
+                    background: "rgba(255,255,255,0.15)",
+                    border: "1px solid rgba(255,255,255,0.28)",
+                  }}
+                >
+                  <FaRobot className="text-white text-[10px]" />
+                </div>
+                <div
+                  className="px-4 py-3 text-white text-[13px] flex items-center gap-2"
+                  style={{
+                    background: "rgba(255,255,255,0.15)",
+                    border: "1px solid rgba(255,255,255,0.22)",
+                    borderRadius: "4px 18px 18px 18px",
+                    backdropFilter: "blur(8px)",
+                    WebkitBackdropFilter: "blur(8px)",
+                  }}
+                >
+                  <TypingDots />
+                  <span className="text-white/70 text-xs">Typing...</span>
+                </div>
+              </div>
+            )}
+
+            {/* Suggestion chips — only at start */}
+            {messages.length === 1 && !isTyping && (
+              <div className="grid grid-cols-2 gap-2 mt-1">
+                {SUGGESTIONS.map((s, i) => (
+                  <button
+                    key={i}
+                    onClick={() => sendMessage(s)}
+                    className="text-white/80 hover:text-white text-[11.5px] text-left px-3 py-2 rounded-xl transition-all cursor-pointer"
+                    style={{
+                      background: "rgba(255,255,255,0.10)",
+                      border: "1px solid rgba(255,255,255,0.22)",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = "rgba(255,255,255,0.20)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = "rgba(255,255,255,0.10)";
+                    }}
+                  >
+                    {s}
+                  </button>
+                ))}
+              </div>
+            )}
+
+            <div ref={bottomRef} />
+          </div>
+
+          {/* ── Input bar ── */}
+          <div
+            className="flex items-center gap-2 px-3 py-3 flex-shrink-0"
+            style={{
+              background: "rgba(255,255,255,0.08)",
+              borderTop: "1px solid rgba(255,255,255,0.18)",
+            }}
+          >
+            <input
+              ref={inputRef}
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && !e.shiftKey && sendMessage()}
+              disabled={isTyping}
+              placeholder="Ask about Aniket..."
+              className="flex-1 rounded-xl px-4 py-2.5 text-white text-[13.5px] placeholder-white/40 outline-none transition-all disabled:opacity-60"
+              style={{
+                background: "rgba(255,255,255,0.10)",
+                border: "1.5px solid rgba(255,255,255,0.22)",
+                backdropFilter: "blur(8px)",
+                WebkitBackdropFilter: "blur(8px)",
+              }}
+              onFocus={(e) =>
+                (e.target.style.borderColor = "rgba(255,255,255,0.55)")
+              }
+              onBlur={(e) =>
+                (e.target.style.borderColor = "rgba(255,255,255,0.22)")
+              }
+            />
+
+            <button
+              onClick={() => sendMessage()}
+              disabled={isTyping || !input.trim()}
+              className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 text-white font-bold text-lg transition-all active:scale-90 disabled:opacity-40 disabled:cursor-not-allowed hover:scale-105 cursor-pointer"
+              style={{
+                background: "rgba(255,255,255,0.18)",
+                border: "1.5px solid rgba(255,255,255,0.30)",
+                backdropFilter: "blur(8px)",
+                WebkitBackdropFilter: "blur(8px)",
+              }}
+            >
+              ➤
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* ════════════════ TOGGLE BUTTON ════════════════ */}
+      <button
+        onClick={() => setIsOpen((p) => !p)}
+        aria-label={isOpen ? "Close chat" : "Open chat"}
+        className={`fixed bottom-6 right-5 z-50 w-16 h-16 rounded-full flex items-center justify-center cursor-pointer overflow-hidden transition-transform duration-200 hover:scale-110 active:scale-95 ${!isOpen ? "pulse-ring" : ""}`}
+        style={{
+          border: "2px solid rgba(255,255,255,0.60)",
+          backdropFilter: "blur(16px)",
+          WebkitBackdropFilter: "blur(16px)",
+          background: isOpen
+            ? "rgba(255,255,255,0.18)"
+            : "rgba(255,255,255,0.12)",
+          boxShadow: "0 4px 24px rgba(0,0,0,0.20), inset 0 1px 0 rgba(255,255,255,0.30)",
+        }}
+      >
+        {isOpen ? (
+          <span className="text-white text-xl font-bold leading-none">✕</span>
+        ) : (
+          <img
+            src={ColorfulChatbotLogo}
+            alt="Chat with Aniket"
+            className="w-full h-full object-cover rounded-full"
+          />
+        )}
+      </button>
+    </>
   );
 }
-
-export default Chatbot;
