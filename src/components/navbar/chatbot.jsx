@@ -219,7 +219,7 @@ export default function Chatbot() {
         </div>
       )}
 
-      <button onClick={() => setIsOpen((p) => !p)} aria-label={isOpen ? "Close chat" : "Open chat"} className={`fixed bottom-6 right-5 z-50 w-16 h-16 rounded-full flex items-center justify-center cursor-pointer overflow-hidden transition-transform duration-200 hover:scale-110 active:scale-95 border-2 border-orange backdrop-blur-md shadow-[0_4px_24px_rgba(251,146,60,0.35)] ${isOpen ? "bg-orange" : "bg-orange pulse-ring"}`} >
+      <button onClick={() => setIsOpen((p) => !p)} aria-label={isOpen ? "Close chat" : "Open chat"} className={`fixed bottom-6 right-5 z-50 w-16 h-16 rounded-full flex items-center justify-center cursor-pointer overflow-hidden transition-transform duration-200 hover:scale-110 active:scale-95 border-2 border-white backdrop-blur-md shadow-[0_4px_24px_rgba(251,146,60,0.35)] ${isOpen ? "bg-orange" : "bg-white pulse-ring"}`} >
 
         {isOpen ? (
 
