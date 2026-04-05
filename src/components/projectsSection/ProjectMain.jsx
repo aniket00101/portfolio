@@ -11,12 +11,6 @@ const projects = [
     sourcecode: 'https://github.com/aniket00101/MERN-STack-E-Commerce'
   },
   {
-    name: 'NextMart - MERN E-Commerce Platform',
-    image: '/images/project/ecommerce.png',
-    link: 'https://ecommercefrontenddeploy-one.vercel.app/',
-    sourcecode: 'https://github.com/aniket00101/MERN-STack-E-Commerce'
-  },
-  {
     name: 'Green Hand (Next-Gen Agriculture Platform)',
     image: '/images/project/greenhand.png',
     link: 'https://green-hand-ai.vercel.app/',
