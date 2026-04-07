@@ -2,6 +2,7 @@ import React from 'react'
 import ProjectText from './ProjectText'
 import { motion } from 'framer-motion'
 import { fadeIn } from '../framerMotion/variants'
+import GreenHand from '../../assets/greenhand.png'
 
 const projects = [
   {
@@ -12,7 +13,7 @@ const projects = [
   },
   {
     name: 'Green Hand (Next-Gen Agriculture Platform)',
-    image: '/images/project/greenhand.png',
+    image: GreenHand,
     link: 'https://green-hand-ai.vercel.app/',
     sourcecode: 'https://github.com/aniket00101/GreenHand_V-2.0.0_Frontend'
   },
