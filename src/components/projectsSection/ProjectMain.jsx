@@ -3,6 +3,7 @@ import ProjectText from './ProjectText'
 import { motion } from 'framer-motion'
 import { fadeIn } from '../framerMotion/variants'
 import GreenHand from '../../assets/greenhand.png'
+import Lpgiot from '../../assets/lpgiot.png'
 
 const projects = [
   {
@@ -16,6 +17,12 @@ const projects = [
     image: GreenHand,
     link: 'https://green-hand-ai.vercel.app/',
     sourcecode: 'https://github.com/aniket00101/GreenHand_V-2.0.0_Frontend'
+  },
+  {
+    name: 'LpgIot (AI-Powered Smart LPG Monitoring)',
+    image: Lpgiot,
+    link: 'https://lpg-dun.vercel.app/',
+    sourcecode: 'https://github.com/LPG-HackONit'
   },
   {
     name: 'Chat Buddies (MERN Stack Real Time Chatting App)',
