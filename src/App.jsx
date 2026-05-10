@@ -14,12 +14,46 @@ import ContactMeright from "./components/SocialLinks/ContactMeright";
 
 function App() {
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
     }, 3600);
+
     return () => clearTimeout(timer);
+  }, []);
+  useEffect(() => {
+    const handleContextMenu = (e) => {
+      e.preventDefault();
+    };
+    const handleKeyDown = (e) => {
+      if (e.key === "F12") {
+        e.preventDefault();
+      }
+      if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "i") {
+        e.preventDefault();
+      }
+      if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "j") {
+        e.preventDefault();
+      }
+      if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "c") {
+        e.preventDefault();
+      }
+      if (e.ctrlKey && e.key.toLowerCase() === "u") {
+        e.preventDefault();
+      }
+      if (e.ctrlKey && e.key.toLowerCase() === "c") {
+        e.preventDefault();
+      }
+      if (e.ctrlKey && e.key.toLowerCase() === "v") {
+        e.preventDefault();
+      }
+    };
+    document.addEventListener("contextmenu", handleContextMenu);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("contextmenu", handleContextMenu);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
   }, []);
   return (
     <main className="font-body min-h-screen bg-DarkBrown dark:bg-hex transition-colors duration-500">
@@ -28,7 +62,7 @@ function App() {
           <HamsterLoader />
         </div>
       ) : (
-        <div className="w-full max-w-[100vw] overflow-x-hidden relative ">
+        <div className="w-full max-w-[100vw] overflow-x-hidden relative">
           <div className="fixed top-0 left-0 w-screen h-screen z-5 pointer-events-none scrollbar-hide">
             <DarkSpaceBackground />
           </div>
@@ -45,7 +79,6 @@ function App() {
             <FooterMain />
           </div>
         </div>
-
       )}
     </main>
   );
