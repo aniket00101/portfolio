@@ -20,13 +20,18 @@ const certificates = [
     image: '/images/certificates/Hackthon.jpg',
   },
   {
+    title: 'AI-Utkarsh',
+    date: 'Date: May 15 2024',
+    image: '/images/certificates/AI-Utkarsh.jpeg',
+  },
+  {
     title: 'Ideon 2025',
-    date: 'Date: October 14 2025',
+    date: 'Date: April 08 2026',
     image: '/images/certificates/Ideon2025.jpg',
   },
   {
     title: 'ShadowFox Internship',
-    date: 'Date: 31st February 2025',
+    date: 'Date: 31 February 2025',
     image: '/images/certificates/shadowfox.png',
   },
   {
