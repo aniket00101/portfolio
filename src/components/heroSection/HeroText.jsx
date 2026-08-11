@@ -7,7 +7,7 @@ export const HeroText = () => {
   return (
     <div className="flex flex-col gap-4 h-full justify-center md:text-left md:pl-10 text-center px-4">
       
-      <motion.h2 variants={fadeIn('down', 0.2)} initial="hidden" whileInView="show" viewport={{ once: false, amount: 0 }} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold uppercase text-cyan">MERN stack</motion.h2>
+      <motion.h2 variants={fadeIn('down', 0.2)} initial="hidden" whileInView="show" viewport={{ once: false, amount: 0 }} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold uppercase text-cyan">MERN stack Developer</motion.h2>
 
       <motion.h1 variants={fadeIn('right', 0.4)} initial="hidden" whileInView="show" viewport={{ once: false, amount: 0 }} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-special text-orange" >Aniket Das</motion.h1>
 
