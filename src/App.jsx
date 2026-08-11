@@ -21,40 +21,40 @@ function App() {
 
     return () => clearTimeout(timer);
   }, []);
-  // useEffect(() => {
-  //   const handleContextMenu = (e) => {
-  //     e.preventDefault();
-  //   };
-  //   const handleKeyDown = (e) => {
-  //     if (e.key === "F12") {
-  //       e.preventDefault();
-  //     }
-  //     if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "i") {
-  //       e.preventDefault();
-  //     }
-  //     if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "j") {
-  //       e.preventDefault();
-  //     }
-  //     if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "c") {
-  //       e.preventDefault();
-  //     }
-  //     if (e.ctrlKey && e.key.toLowerCase() === "u") {
-  //       e.preventDefault();
-  //     }
-  //     if (e.ctrlKey && e.key.toLowerCase() === "c") {
-  //       e.preventDefault();
-  //     }
-  //     if (e.ctrlKey && e.key.toLowerCase() === "v") {
-  //       e.preventDefault();
-  //     }
-  //   };
-  //   document.addEventListener("contextmenu", handleContextMenu);
-  //   document.addEventListener("keydown", handleKeyDown);
-  //   return () => {
-  //     document.removeEventListener("contextmenu", handleContextMenu);
-  //     document.removeEventListener("keydown", handleKeyDown);
-  //   };
-  // }, []);
+  useEffect(() => {
+    const handleContextMenu = (e) => {
+      e.preventDefault();
+    };
+    const handleKeyDown = (e) => {
+      if (e.key === "F12") {
+        e.preventDefault();
+      }
+      if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "i") {
+        e.preventDefault();
+      }
+      if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "j") {
+        e.preventDefault();
+      }
+      if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "c") {
+        e.preventDefault();
+      }
+      if (e.ctrlKey && e.key.toLowerCase() === "u") {
+        e.preventDefault();
+      }
+      if (e.ctrlKey && e.key.toLowerCase() === "c") {
+        e.preventDefault();
+      }
+      if (e.ctrlKey && e.key.toLowerCase() === "v") {
+        e.preventDefault();
+      }
+    };
+    document.addEventListener("contextmenu", handleContextMenu);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("contextmenu", handleContextMenu);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
   return (
     <main className="font-body min-h-screen bg-DarkBrown dark:bg-hex transition-colors duration-500">
       {loading ? (
