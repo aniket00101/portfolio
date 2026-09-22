@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { fadeIn } from '../framerMotion/variants'
 import GreenHand from '../../assets/greenhand.png'
 import Lpgiot from '../../assets/lpgiot.png'
+import Resume from '../../assets/resumeanalyser.png'
 
 const projects = [
   {
@@ -41,6 +42,12 @@ const projects = [
     image: '/images/project/Resume.png',
     link: 'https://ai-zeta-two-77.vercel.app/',
     sourcecode: 'https://github.com/aniket00101/Ai-Resume-Builder-Application'
+  },
+  {
+    name: 'Resume-IQ (Smart AI-Based Resume Evaluation)',
+    image: Resume,
+    link: 'https://ai-resume-intelligence-job-recommen.vercel.app/',
+    sourcecode: 'https://github.com/Anushka-Paul-26/AI-Resume-Intelligence-Job-Recommendation'
   },
   {
     name: 'Weather Forecast App',
